@@ -6,12 +6,12 @@ import os
 import re
 
 # Use a single API key
-# api_key = st.secrets["google"]["api_key"]
-
-# genai.configure(api_key=api_key)
-api_key = os.getenv("GOOGLE_API_KEY")
+api_key = st.secrets["google"]["api_key"]
 
 genai.configure(api_key=api_key)
+# api_key = os.getenv("GOOGLE_API_KEY")
+
+# genai.configure(api_key=api_key)
 
 # Function to extract video ID from various YouTube URL formats
 def get_video_id(youtube_video_url):
