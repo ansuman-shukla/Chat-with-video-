@@ -21,7 +21,11 @@ def get_video_id(youtube_video_url):
     for pattern in patterns:
         match = re.search(pattern, youtube_video_url)
         if match:
-            return match.group(1)
+            tempVar =  match.group(1)
+            print("-----------------------------------------")
+            print(tempVar)
+            print("-----------------------------------------")
+            return tempVar
     return None
 
 # Function to extract transcript from a YouTube video in all available languages
@@ -88,6 +92,9 @@ if st.button("Analyze"):
     if youtube_link:
         with st.spinner("Extracting and analyzing transcript..."):
             transcript_dict = extract_transcript_details(youtube_link)
+            print("-----------------------------------------")
+            print(transcript_dict)
+            print("-----------------------------------------")
             if transcript_dict:
                 try:
                     model = genai.GenerativeModel(
